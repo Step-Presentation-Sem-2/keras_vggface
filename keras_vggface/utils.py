@@ -9,7 +9,7 @@
 
 import numpy as np
 from keras import backend as K
-from keras.utils.data_utils import get_file
+from tensorflow.python.keras.utils.data_utils import get_file
 
 V1_LABELS_PATH = 'https://github.com/rcmalli/keras-vggface/releases/download/v2.0/rcmalli_vggface_labels_v1.npy'
 V2_LABELS_PATH = 'https://github.com/rcmalli/keras-vggface/releases/download/v2.0/rcmalli_vggface_labels_v2.npy'
@@ -28,7 +28,7 @@ SENET50_WEIGHTS_PATH_NO_TOP = 'https://github.com/rcmalli/keras-vggface/releases
 VGGFACE_DIR = 'models/vggface'
 
 
-def preprocess_input(x, data_format=None, version=1):
+def preprocess_input(x, data_format=None, version=2):
     x_temp = np.copy(x)
     if data_format is None:
         data_format = K.image_data_format()
